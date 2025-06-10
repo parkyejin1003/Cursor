@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화려한 할 일 관리 앱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcomeBox" style="display:none; position:fixed; top:32px; left:50%; transform:translateX(-50%); z-index:100; max-width: 400px; background: linear-gradient(90deg,#7c4dff,#43cea2); color:#fff; font-size:1.2em; font-weight:bold; border-radius:12px; box-shadow:0 2px 12px rgba(124,77,255,0.12); padding:24px 0; text-align:center;"></div>
+    <div class="header">
+        <span id="welcomeMsg" style="display:none;"></span>
+        <button class="login-btn" id="loginBtn" onclick="location.href='login.html'">로그인</button>
+        <button class="login-btn" id="logoutBtn" style="display:none;">로그아웃</button>
+    </div>
+    <div class="container center-box">
+        <span id="loginWelcomeMsg" style="display:none;font-size:1.2em;font-weight:bold;color:#7c4dff;"></span>
+        <h1>✨ 할 일 ✨</h1>
+        <div class="todo-input">
+            <input type="text" id="todoInput" placeholder="할 일을 입력하세요...">
+            <button id="addButton">추가</button>
+        </div>
+        <ul id="todoList" class="todo-list">
+            <!-- 할 일 목록이 여기에 동적으로 추가됩니다 -->
+        </ul>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="user.js"></script>
+</body>
+</html> 
