@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDMU8EdSzoF8aikqWaDvsCAb0XtUop1PFU",
+            authDomain: "mmemo-47730.firebaseapp.com",
+            projectId: "mmemo-47730",
+            storageBucket: "mmemo-47730.firebasestorage.app",
+            messagingSenderId: "371211028549",
+            appId: "1:371211028549:web:47705712192cf6fdeb7b2c",
+            measurementId: "G-38661X4BNQ",
+            databaseURL: "https://mmemo-47730-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Firebase가 초기화되었음을 전역 변수로 설정
+        window.firebaseApp = app;
+        window.firebaseAuth = auth;
+        window.firebaseDb = db;
+    </script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1>회원가입</h1>
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" required placeholder="이메일을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" required placeholder="비밀번호를 입력하세요">
+                    <small class="help-text">비밀번호는 6자 이상이어야 합니다</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">비밀번호 확인</label>
+                    <input type="password" id="confirmPassword" required placeholder="비밀번호를 다시 입력하세요">
+                </div>
+                <div class="auth-buttons">
+                    <button type="submit" class="auth-btn register-btn">회원가입</button>
+                </div>
+            </form>
+            
+            <div class="auth-links">
+                <a href="login.html" class="link-btn">이미 계정이 있으신가요? 로그인하기</a>
+                <a href="index.html" class="link-btn">리뷰 페이지로 이동</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="register.js"></script>
+</body>
+</html> 
